@@ -55,9 +55,13 @@ public class WeekOneExercisesPartOne {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     // TODO RESPONSE: In the variable declarations below, why is it necessary to place
     //  an 'f' after 4.3 but not after 1500 or 4?
+    // My answer:  The variable of interestRateAsAPercent involves a decimal and requires a literal form of 0.0f.
+    // The other two variables represent an integer amount, meaning no decimal.  Therefore, these variables
+    // do not require an f.
+
     public void simpleInterestReturnsCorrectAmount() {
         float principalAmount = 1500;
         float interestRateAsAPercent = 4.3f;
@@ -79,6 +83,6 @@ public class WeekOneExercisesPartOne {
      * @return
      */
     private float calcSimpleInterest(float principal, float percentInterestRate, float numberOfYears) {
-        return 0;
+        return principal * (1 + (percentInterestRate / 100) * numberOfYears);
     }
 }
