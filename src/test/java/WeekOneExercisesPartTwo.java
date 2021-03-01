@@ -63,7 +63,7 @@ public class WeekOneExercisesPartTwo {
 
         // The alcoholDistributionRatio variable is declared before the switch block so it is visible inside
         // and outside of the block.
-        float alcoholDistributionRatio = 0.0f;
+        float alcoholDistributionRatio;
 
         float weightQuotient = (5.14f / weightInPounds);
         float lastConsumptionInterval = (hoursSinceLastDrink * 0.015f);
@@ -73,10 +73,10 @@ public class WeekOneExercisesPartTwo {
                 alcoholDistributionRatio = 0.73f;
                 break;
             case 'F':
+            default:
                 alcoholDistributionRatio = 0.66f;
                 break;
         }
-
         float peakAlcoholContent = (weightQuotient * ouncesOfAlcoholConsumed * alcoholDistributionRatio);
         return peakAlcoholContent - lastConsumptionInterval;
     }
